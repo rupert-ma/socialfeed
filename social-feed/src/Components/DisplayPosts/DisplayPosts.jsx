@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import Post from './Post';
+import Post from '../Post/Post.jsx';
+
 
 const DisplayPosts = ({posts}) => {
     console.log("hello from display posts", posts)
     return (
         <div>
-                {posts.map((entry)=>{
+                {posts.map((entry, index)=>{
                     return (
-                    <li><Post post={entry} /></li>)
+                    <Post key={index} post={entry} />)
                 }
                     )}
         </div> 
