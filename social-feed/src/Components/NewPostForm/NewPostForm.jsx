@@ -11,6 +11,8 @@ const NewPostForm = ({addNewEntryProperty}) => {
             post: post
         };
         addNewEntryProperty(newPostEntry);
+        setUserName('');
+        setPost('')
     }
 
     return ( 

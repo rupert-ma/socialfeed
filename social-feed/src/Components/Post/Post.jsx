@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import LikePost from '../LikeDislike/LikePost.jsx'
+import DisLikePost from '../LikeDislike/DisLikePost.jsx'
 
 const Post = ({post}) => {
 console.log(post)
@@ -12,8 +14,8 @@ console.log(post)
                 <p>{post.post}</p>
             </div>
             <div>
-                <button>Like</button>
-                <button>Dislike</button>
+                <LikePost likedPostProperty={post.isLiked} dislikedPostProperty={post.isDisliked} />
+                {/* <DisLikePost /> */}
             </div>
         </div>
     );

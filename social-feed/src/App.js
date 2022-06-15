@@ -9,18 +9,17 @@ function App() {
   ]);
 
   function addNewPost(newPostEntry){
-    let tempNewPostEntry = [...posts, newPostEntry];
+    let tempNewPostEntry = [newPostEntry, ...posts];
     setPosts(tempNewPostEntry);
-
   }
 
   return (
     <div>
       <div>
-          <DisplayPosts posts={posts}/>  
+        <NewPostForm addNewEntryProperty={addNewPost} />
       </div>
       <div>
-        <NewPostForm addNewEntryProperty={addNewPost} />
+          <DisplayPosts posts={posts}/>  
       </div>
     </div>
   );
