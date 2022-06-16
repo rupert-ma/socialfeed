@@ -4,13 +4,11 @@ import GreenLikeImage from "./Images/GreenThumbUp.png";
 import GreyDisLikeImage from "./Images/GreyThumbDown.png";
 import RedDisLikeImage from "./Images/RedThumbDown.png";
 
-const LikePost = ({ likedPostProperty }) => {
-    const [userLike, setUserLike] = useState(false);
-    const [userDisLike, setUserDisLike] = useState(false);
+const LikePost = ({ likedPostProperty, dislikedPostProperty }) => {
+    const [userLike, setUserLike] = useState(likedPostProperty);
+    const [userDisLike, setUserDisLike] = useState(dislikedPostProperty);
     const [likedImage, setLikedImage] = useState(GreyLikeImage);
     const [disLikedImage, setDisLikedImage] = useState(GreyDisLikeImage);
-
-    console.log(`isLiked property: ${likedPostProperty} ` );
 
     function likedClick(event) {
         event.preventDefault();
@@ -19,13 +17,16 @@ const LikePost = ({ likedPostProperty }) => {
                 setLikedImage(GreyLikeImage);
                 setUserLike(false);
                 break;
-                
+
             case false:
                 setLikedImage(GreenLikeImage);
                 setDisLikedImage(GreyDisLikeImage);
                 setUserLike(true);
-                break;  
+                break;
         }
+        console.log(
+            `isLiked property: ${likedPostProperty} isDisLiked property: ${dislikedPostProperty} `
+        );
     }
 
     return (
@@ -33,7 +34,7 @@ const LikePost = ({ likedPostProperty }) => {
                 style={{ height: "20px", paddingLeft: "10px" }}
                 src={likedImage}
                 alt="LikePost"
-                onClick={(event)=>likedClick(event, userLike)}
+                onClick={(event) => likedClick(event, userLike)}
             />
     );
 };

@@ -4,13 +4,11 @@ import GreenLikeImage from "./Images/GreenThumbUp.png";
 import GreyDisLikeImage from "./Images/GreyThumbDown.png";
 import RedDisLikeImage from "./Images/RedThumbDown.png";
 
-const DisLikePost = ({ dislikedPostProperty }) => {
-    const [userLike, setUserLike] = useState(false);
-    const [userDisLike, setUserDisLike] = useState(false);
+const DisLikePost = ({ dislikedPostProperty, likedPostProperty }) => {
+    const [userLike, setUserLike] = useState(likedPostProperty);
+    const [userDisLike, setUserDisLike] = useState(dislikedPostProperty);
     const [likedImage, setLikedImage] = useState(GreyLikeImage);
     const [disLikedImage, setDisLikedImage] = useState(GreyDisLikeImage);
-
-    console.log(`isDisLiked property: ${dislikedPostProperty} ` );
 
     function disLikedClick(event) {
         event.preventDefault();
@@ -25,15 +23,17 @@ const DisLikePost = ({ dislikedPostProperty }) => {
                 setUserDisLike(true);
                 break;
         }
+        console.log(`isLiked property: ${likedPostProperty} isDisLiked property: ${dislikedPostProperty} ` );
+
     }
 
     return (
-            <img
-                style={{ height: "20px", paddingLeft: "10px" }}
-                src={disLikedImage}
-                alt="DisLikePost"
-                onClick={(event)=>disLikedClick(event,userDisLike)}
-            />
+        <img
+            style={{ height: "20px", paddingLeft: "10px" }}
+            src={disLikedImage}
+            alt="DisLikePost"
+            onClick={(event) => disLikedClick(event, userDisLike)}
+        />
     );
 };
 

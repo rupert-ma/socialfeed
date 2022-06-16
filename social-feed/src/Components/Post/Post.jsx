@@ -5,20 +5,20 @@ import LikePost from "../LikeDislike/LikePost.jsx";
 const Post = ({ post }) => {
     console.log(post);
     return (
-        <li>
+        <li className="post-container">
             <div>
                 <div>
-                    <p>{post.userName}</p>
-                    <p>date</p>
+                    <p className="userName">{post.userName}</p>
+                    {/* <p>date</p> */}
                 </div>
                 <div>
                     <p>{post.post}</p>
                 </div>
-                <div>
+                <div className="like-container">
                     <LikePost
-                        likedPostProperty={post.isLiked}
+                        likedPostProperty={post.isLiked}  dislikedPostProperty={post.isDisliked}
                     />
-                    <DisLikePost dislikedPostProperty={post.isDisliked}/>
+                    <DisLikePost likedPostProperty={post.isLiked} dislikedPostProperty={post.isDisliked}/>
                 </div>
             </div>
         </li>
