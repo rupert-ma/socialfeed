@@ -3,15 +3,14 @@ import Post from '../Post/Post.jsx';
 
 
 const DisplayPosts = ({posts}) => {
-    console.log("hello from display posts", posts)
     return (
-        <div>
+        <ul>
                 {posts.map((entry, index)=>{
                     return (
                     <Post key={index} post={entry} />)
                 }
                     )}
-        </div> 
+        </ul> 
         
     );
 }

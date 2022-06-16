@@ -3,12 +3,16 @@ import React, { useState } from 'react';
 const NewPostForm = ({addNewEntryProperty}) => {
     const [userName, setUserName] = useState('');
     const [post, setPost] = useState('');
+    const [isLiked, setIsLiked] = useState('');
+    const [isDisLiked, setDisLiked] = useState('');
 
     function handleSubmit(formEvent){
         formEvent.preventDefault();
         let newPostEntry = {
             userName: userName,
-            post: post
+            post: post,
+            isLiked:false, 
+            isDisliked:false
         };
         addNewEntryProperty(newPostEntry);
         setUserName('');

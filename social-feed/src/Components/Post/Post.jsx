@@ -1,23 +1,27 @@
 import React, { useState } from "react";
-import LikePost from '../LikeDislike/LikePost.jsx'
-import DisLikePost from '../LikeDislike/DisLikePost.jsx'
+import DisLikePost from "../LikeDislike/DisLikePost.jsx";
+import LikePost from "../LikeDislike/LikePost.jsx";
 
-const Post = ({post}) => {
-console.log(post)
+const Post = ({ post }) => {
+    console.log(post);
     return (
-        <div>
+        <li>
             <div>
-                <p>{post.userName}</p>
-                <p>date</p>
+                <div>
+                    <p>{post.userName}</p>
+                    <p>date</p>
+                </div>
+                <div>
+                    <p>{post.post}</p>
+                </div>
+                <div>
+                    <LikePost
+                        likedPostProperty={post.isLiked}
+                    />
+                    <DisLikePost dislikedPostProperty={post.isDisliked}/>
+                </div>
             </div>
-            <div>
-                <p>{post.post}</p>
-            </div>
-            <div>
-                <LikePost likedPostProperty={post.isLiked} dislikedPostProperty={post.isDisliked} />
-                {/* <DisLikePost /> */}
-            </div>
-        </div>
+        </li>
     );
 };
 
