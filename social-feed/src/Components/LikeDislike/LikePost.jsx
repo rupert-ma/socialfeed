@@ -31,7 +31,7 @@ const LikePost = ({ likedPostProperty, dislikedPostProperty }) => {
 
     return (
             <img
-                style={{ height: "20px", paddingLeft: "10px" }}
+                style={{ height: "30px", paddingLeft: "10px" }}
                 src={likedImage}
                 alt="LikePost"
                 onClick={(event) => likedClick(event, userLike)}
