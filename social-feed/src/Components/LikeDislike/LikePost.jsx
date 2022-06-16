@@ -30,12 +30,12 @@ const LikePost = ({ likedPostProperty, dislikedPostProperty }) => {
     }
 
     return (
-            <img
-                style={{ height: "30px", paddingLeft: "10px" }}
-                src={likedImage}
-                alt="LikePost"
-                onClick={(event) => likedClick(event, userLike)}
-            />
+        <img
+            style={{ height: "30px", paddingLeft: "10px" }}
+            src={likedImage}
+            alt="LikePost"
+            onClick={(event) => likedClick(event, userLike)}
+        />
     );
 };
 

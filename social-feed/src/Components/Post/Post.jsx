@@ -16,9 +16,13 @@ const Post = ({ post }) => {
                 </div>
                 <div className="like-container">
                     <LikePost
-                        likedPostProperty={post.isLiked}  dislikedPostProperty={post.isDisliked}
+                        likedPostProperty={post.isLiked}
+                        dislikedPostProperty={post.isDisliked}
                     />
-                    <DisLikePost likedPostProperty={post.isLiked} dislikedPostProperty={post.isDisliked}/>
+                    <DisLikePost
+                        likedPostProperty={post.isLiked}
+                        dislikedPostProperty={post.isDisliked}
+                    />
                 </div>
             </div>
         </li>

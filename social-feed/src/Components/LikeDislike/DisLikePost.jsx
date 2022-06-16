@@ -23,8 +23,9 @@ const DisLikePost = ({ dislikedPostProperty, likedPostProperty }) => {
                 setUserDisLike(true);
                 break;
         }
-        console.log(`isLiked property: ${likedPostProperty} isDisLiked property: ${dislikedPostProperty} ` );
-
+        console.log(
+            `isLiked property: ${likedPostProperty} isDisLiked property: ${dislikedPostProperty} `
+        );
     }
 
     return (
